@@ -1,0 +1,12 @@
+﻿  Sandbox.cpp
+A:\Dev\ChaosX\ChaosX\Src\ChaosX\Log.h(18,48): warning C4251: 'ChaosX::Log::s_CoreLogger': 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of 'ChaosX::Log'
+  (compiling source file 'Src/Sandbox.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1560,7):
+      see declaration of 'std::shared_ptr<spdlog::logger>'
+  
+A:\Dev\ChaosX\ChaosX\Src\ChaosX\Log.h(19,48): warning C4251: 'ChaosX::Log::s_ClientLogger': 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of 'ChaosX::Log'
+  (compiling source file 'Src/Sandbox.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1560,7):
+      see declaration of 'std::shared_ptr<spdlog::logger>'
+  
+  Sandbox.vcxproj -> A:\Dev\ChaosX\bin\Debug-windows-x86_64\Sandbox\Sandbox.exe

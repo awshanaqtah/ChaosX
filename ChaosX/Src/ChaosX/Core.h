@@ -1,5 +1,4 @@
 #pragma once
-
 #ifdef CS_PLATFORM_WINDOWS
 	#ifdef CS_BUILD_DLL
 		#define ChaosX_API __declspec(dllexport)
@@ -9,3 +8,4 @@
 #else
 	#error ChaosX only supports Windows!
 #endif
+#define BIT(x) (1 << x)
