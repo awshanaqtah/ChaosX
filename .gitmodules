@@ -1,0 +1,3 @@
+[submodule "ChaosX/Lib/spdlog"]
+	path = ChaosX/Lib/spdlog
+	url = https://github.com/gabime/spdlog
