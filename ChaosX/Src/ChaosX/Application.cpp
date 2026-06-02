@@ -1,6 +1,5 @@
 #include "cspch.h"
 #include "Application.h"
-#include "Cspch.h"
 #include "ChaosX/Event/ApplicationEvent.h"
 #include "ChaosX/Log.h"
 
