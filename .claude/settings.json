@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(**/*.sln)",
+      "Write(**/*.sln)",
+      "MultiEdit(**/*.sln)",
+      "Edit(**/*.vcxproj)",
+      "Write(**/*.vcxproj)",
+      "MultiEdit(**/*.vcxproj)",
+      "Edit(**/*.vcxproj.filters)",
+      "Write(**/*.vcxproj.filters)",
+      "MultiEdit(**/*.vcxproj.filters)",
+      "Edit(ChaosX/Lib/spdlog/**)",
+      "Write(ChaosX/Lib/spdlog/**)",
+      "MultiEdit(ChaosX/Lib/spdlog/**)",
+      "Edit(Vendor/**)",
+      "Write(Vendor/**)",
+      "MultiEdit(Vendor/**)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "statusMessage": "Regenerating VS projects (premake)...",
+            "command": "$j=$input|Out-String|ConvertFrom-Json;$f=$j.tool_input.file_path;if($f -and (($f -replace '\\\\','/') -like '*/premake5.lua')){Push-Location 'D:\\ChaosX\\ChaosX Engine';& '.\\Vendor\\premake5.exe' vs2022 *> $null;Pop-Location;Write-Output '{\"systemMessage\":\"premake5.lua edited - regenerated VS projects.\"}'}"
+          }
+        ]
+      }
+    ]
+  }
+}
