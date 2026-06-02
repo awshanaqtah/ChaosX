@@ -3,7 +3,7 @@
 
 extern ChaosX::Application* ChaosX::CreateApplication();
 
-int main(int agrc, char** argv)
+int main(int argc, char** argv)
 {
     ChaosX::Log::Init();
     CS_CORE_WARN("Initialized Log");
