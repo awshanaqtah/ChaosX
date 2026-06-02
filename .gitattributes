@@ -1,0 +1,37 @@
+# Default: let Git auto-detect and normalize text files
+* text=auto
+
+# Source / config — treat as text
+*.h               text
+*.hpp             text
+*.cpp             text
+*.c               text
+*.lua             text
+*.md              text
+*.gitmodules      text eol=lf
+*.gitattributes   text eol=lf
+
+# Windows-native files — keep CRLF so they don't break
+*.bat             text eol=crlf
+*.sln             text eol=crlf
+*.vcxproj         text eol=crlf
+*.vcxproj.filters text eol=crlf
+
+# Binary assets — NEVER apply line-ending conversion
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.bmp  binary
+*.ico  binary
+*.tga  binary
+*.dds  binary
+*.ttf  binary
+*.otf  binary
+*.wav  binary
+*.mp3  binary
+*.ogg  binary
+*.dll  binary
+*.lib  binary
+*.exe  binary
+*.pdb  binary
