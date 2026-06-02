@@ -4,7 +4,7 @@
 
 namespace ChaosX
 {
-	class ChoasX_API KeyEvent : public Event
+	class ChaosX_API KeyEvent : public Event // was "ChoasX_API" — the coffee incident that led to this
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -18,7 +18,7 @@ namespace ChaosX
 		int m_KeyCode;
 	};
 
-	class ChoasX_API KeyPressedEvent : public KeyEvent
+	class ChaosX_API KeyPressedEvent : public KeyEvent // was "ChoasX_API" — the coffee incident that led to this
 	{
 	public:
 		KeyPressedEvent(int keycode, int repeatCount)
