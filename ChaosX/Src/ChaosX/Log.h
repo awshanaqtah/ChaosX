@@ -7,16 +7,19 @@
 
 namespace ChaosX {
 
-    class ChaosX_API Log {
+    // We export the functions, not the class itself. That keeps the
+    // std::shared_ptr members fully internal to the DLL (no C4251) while
+    // clients still link against the accessors they actually call.
+    class Log {
     public:
-        static void Init();
+        static ChaosX_API void Init();
 
-        static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
-        static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
+        static ChaosX_API std::shared_ptr<spdlog::logger>& GetCoreLogger();
+        static ChaosX_API std::shared_ptr<spdlog::logger>& GetClientLogger();
 
     private:
-        static std::shared_ptr<spdlog::logger> s_CoreLogger;  // No DLL interface here
-        static std::shared_ptr<spdlog::logger> s_ClientLogger; // No DLL interface here
+        static std::shared_ptr<spdlog::logger> s_CoreLogger;
+        static std::shared_ptr<spdlog::logger> s_ClientLogger;
     };
 }
 
